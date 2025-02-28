@@ -1,7 +1,7 @@
 // Stt.jsx
 // Replace with your Hugging Face Inference API key.
 
-const HF_INF_API_KEY = process.env.REACT_APP_HF_INF_API_KEY;
+const HF_INF_API_KEY = import.meta.env.VITE_HF_INF_API_KEY;
 const STT_API_URI = "https://api-inference.huggingface.co/models/openai/whisper-tiny";
 
 let mediaRecorder = null;
