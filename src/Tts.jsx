@@ -1,6 +1,6 @@
 // Tts.jsx
 
-const RAPID_API_KEY = process.env.REACT_APP_RAPID_API_KEY; // Replace with your RapidAPI key
+const RAPID_API_KEY = import.meta.env.VITE_RAPID_API_KEY; // Replace with your RapidAPI key
 const TTS_API_URI = "https://open-ai-text-to-speech1.p.rapidapi.com/";
 const DEFAULT_VOICE = "onyx"; // Options: alloy, echo, fable, onyx, nova, shimmer
 
