@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f1642;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3d4b8c;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5a6cb8;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3d4b8c #0f1642;
+}
+
+/* Ensure smooth transitions */
+.resize-none {
+  transition: height 0.1s ease-out;
+}
+
+/* Animated stars background */
+.stars-container {
+  z-index: 0;
+}
+
+.stars, .stars2, .stars3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #eef, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 90px 40px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 160px 120px, #ddf, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0;
+  animation: stars-animation 8s infinite linear;
+}
+
+.stars {
+  background-position: 50% 50%;
+  animation-delay: 0s;
+}
+
+.stars2 {
+  background-position: 20% 60%;
+  background-size: 300px 300px;
+  animation-delay: 1s;
+}
+
+.stars3 {
+  background-position: 40% 80%;
+  background-size: 400px 400px;
+  animation-delay: 2s;
+}
+
+@keyframes stars-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  10% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-2000px);
+  }
+}
+
+/* Add a subtle glow effect to elements */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(138, 180, 248, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(138, 180, 248, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(138, 180, 248, 0.5);
+  }
+}
+
+/* Apply glow animation to buttons on hover */
+button:hover {
+  animation: glow 2s infinite;
+}
